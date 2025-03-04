@@ -28,13 +28,12 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
 
 
 <!DOCTYPE html>
-<!-- What happens when the language attribute is commented out? -->
-<!-- <html lang="en"> -->
+<!-- What happens when the language attribute is commented out? The screen reader does not know wich language to use -->
+  <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Only one `<title>` should be used; multiple titles can cause unexpected behavior and negatively impact SEO and accessibility. -->
-    <title>Vase Vista - Artisanal Vases</title>
     <title>Vase Vista - Artisanal Vases</title>
     <meta name="description" content="Elevating spaces through thoughtfully designed vessels that blend form and function in perfect harmony." />
     <link rel="stylesheet" href="styles.css" />
@@ -50,9 +49,9 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
           <!-- Navigation menu with duplicate IDs, inconsistent tabindex, and broken links to a 404 page -->
           <ul class="nav-links">
             <li><a id="1" href="#home">Home</a></li>
-            <li><a id="1" tabindex="-1" href="#collection">Collection</a></li>
+            <li><a id="2" href="#collection">Collection</a></li>
             <li><a href="#philosophy">Philosophy</a></li>
-            <li><a tabindex="-1" href="404.html">Contact</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -66,8 +65,8 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
             <span class="subtitle">Artisanal Excellence</span>
             <!-- Two <h1> tags inside .container may affect accessibility and SEO. -->
 
-            <h1>Timeless Beauty <br>in Every Curve</h1>
-            <h1></h1>
+            <h1>Timeless Beauty in Every Curve</h1>
+          
             <p>Each piece tells a story of craftsmanship and elegance, designed to elevate your space and inspire your senses.</p>
             <div class="hero-buttons">
               <a href="#collection" class="btn btn-primary">Explore Collection</a>
@@ -84,15 +83,16 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
       <section id="collection" class="products">
         <div class="container">
           <div class="section-header">
-            <span class="subtitle">Our Collection</span>
+            <!-- changed span-tag to h3 becuase span is usually only used for styling and does nothing for accessibility -->
+            <h3 class="subtitle">Our Collection</h3>
             <h2>Curated Excellence</h2>
           </div>
 
-      <!-- Use a <button> instead of a <div> to improve accessibility -->
+      <!-- Use a <button> instead of a <div> to improve accessibility get rid of active on the first button-->
           <div class="category-filters">
-            <div class="filter-btn active">All</div>
+            <button class="filter-btn">All</button>
             <button class="filter-btn">Ceramic</button>
-            <div class="filter-btn">Glass</div>
+            <button class="filter-btn">Glass</button>
             <button class="filter-btn">Porcelain</button>
           </div>
 
@@ -101,11 +101,11 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
           <div class="product-grid">
             <div class="product-card">
               <div class="product-image">
-                <img src="https://images.unsplash.com/photo-1602816130091-c3c6b8b28060?q=80&w=1888&auto=format&fit=crop">
+                <img src="https://images.unsplash.com/photo-1602816130091-c3c6b8b28060?q=80&w=1888&auto=format&fit=crop" alt="Terra Sculptural Vase in matte terracotta">
               </div>
               <div class="product-info">
                 <span class="product-category">Ceramic</span>
-                <h1>Terra Sculptural Vase</h3>
+                <h1>Terra Sculptural Vase</h1>
                 <p>Hand-thrown ceramic with a matte terracotta finish</p>
                 <span class="product-price">$120</span>
               </div>
@@ -115,23 +115,23 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
             Ensure heading levels are used logically for better accessibility and screen reader navigation. -->
             <div class="product-card">
               <div class="product-image">
-                <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?q=80&w=1964&auto=format&fit=crop">
+                <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?q=80&w=1964&auto=format&fit=crop" alt="Serenity Glass Vessel with gradient effect">
               </div>
               <div class="product-info">
                 <span class="product-category">Glass</span>
-                <h1>Serenity Glass Vessel</h3>
+                <h1>Serenity Glass Vessel</h1>
                 <p>Mouth-blown glass with a gentle gradient effect</p>
                 <span class="product-price">$95</span>
               </div>
             </div>
-
+         
             <div class="product-card">
               <div class="product-image">
-                <img src="https://images.unsplash.com/photo-1578500351865-ea7deed19bd0?q=80&w=1887&auto=format&fit=crop">
+                <img src="https://images.unsplash.com/photo-1578500351865-ea7deed19bd0?q=80&w=1887&auto=format&fit=crop" alt="Nordic Minimalist Vase in white porcelain">
               </div>
               <div class="product-info">
                 <span class="product-category">Porcelain</span>
-                <h3>Nordic Minimalist Vase</h3>
+                <h1>Nordic Minimalist Vase</h1>
                 <p>Clean lines and pure form in white porcelain</p>
                 <span class="product-price">$85</span>
               </div>
@@ -139,11 +139,11 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
 
             <div class="product-card">
               <div class="product-image">
-                <img src="https://images.unsplash.com/photo-1582131503261-fca1d1c0589f?q=80&w=1974&auto=format&fit=crop">
+                <img src="https://images.unsplash.com/photo-1582131503261-fca1d1c0589f?q=80&w=1974&auto=format&fit=crop" alt="Organic Contour Vessel in ceramic">
               </div>
               <div class="product-info">
                 <span class="product-category">Ceramic</span>
-                <h3>Organic Contour Vessel</h3>
+                <h1>Organic Contour Vessel</h1>
                 <p>Asymmetrical silhouette with a handcrafted texture</p>
                 <span class="product-price">$135</span>
               </div>
@@ -151,7 +151,7 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
           </div>
         </div>
       </section>
-
+         <!-- HERE YOU ARE -->
       <!-- Philosophy Section -->
       <section id="philosophy" class="philosophy">
         <div class="container">
@@ -160,7 +160,7 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
               <img src="https://images.unsplash.com/photo-1576020799627-aeac74d58064?q=80&w=1964&auto=format&fit=crop">
               <div class="quote-box">
                 <!-- a-tag, should be p-tag -->
-                <a>"Simplicity is the ultimate sophistication."</a>
+                <p>"Simplicity is the ultimate sophistication."</p>
               </div>
             </div>
             <div class="philosophy-text">
@@ -212,17 +212,25 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
             <div class="contact-info">
               <div class="info-card">
                 <h3>Visit Our Studio</h3>
-                <p>123 Design Avenue<br>Studio 405<br>New York, NY 10001</p>
+                <address>
+                  <p>123 Design Avenue</p>
+                  <p>Studio 405</p>
+                  <p>New York, NY 10001</p> 
+                </address>
               </div>
               
               <div class="info-card">
                 <h3>Opening Hours</h3>
-                <p>Monday - Friday: 10am - 6pm<br>Saturday: 11am - 5pm<br>Sunday: Closed</p>
+                  <p>Monday - Friday: 10am - 6pm</p>
+                  <p>Saturday: 11am - 5pm</p>
+                  <p>Sunday: Closed</p>  
               </div>
               
               <div class="info-card">
                 <h3>Get in Touch</h3>
-                <p>info@vasevista.com<br>+1 (212) 555-1234<br>@vasevista</p>
+                <p>info@vasevista.com<p>
+                  <p>+1 (212) 555-1234</p>
+                  <p>@vasevista</p>
               </div>
             </div>
           </div>
@@ -240,14 +248,14 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
           </div>
 
           <!-- Incorrect use of <p> for links: Replace <p> with <a> to ensure proper semantics and accessibility. -->
-          <div class="footer-links">
+          <nav class="footer-links">
             <div class="footer-column">
               <h4>Quick Links</h4>
               <ul>
-                <li><p href="#home">Home</p></li>
-                <li><p href="#collection">Collection</p></li>
-                <li><p href="#philosophy">Philosophy</p></li>
-                <li><p href="#contact">Contact</p></li>
+                <li><a href="#home">Home</li>
+                <li><a href="#collection">Collection</li>
+                <li><a href="#philosophy">Philosophy</li>
+                <li><a href="#contact">Contact</li>
               </ul>
             </div>
          
@@ -255,20 +263,20 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
             <div class="footer-column">
               <h4>Connect</h4>
               <ul>
-                <li><p href="#">Instagram</p></li>
-                <li><p href="404.html">Pinterest</p></li>
-                <li><p href="#">LinkedIn</p></li>
+                <li><a href="#">Instagram</li>
+                <li><a href="#">Pinterest</li>
+                <li><a href="#">LinkedIn</li>
               </ul>
             </div>
-          </div>
+          </nav>
         </div>
         
         <div class="footer-bottom">
           <p>&copy; 2023 Vase Vista. All rights reserved.</p>
           
           <div class="footer-legal">
-            <a href="404.html">Privacy Policy</a>
-            <a href="404.html">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
           </div>
         </div>
       </div>
