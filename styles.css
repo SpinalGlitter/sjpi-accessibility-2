@@ -242,14 +242,15 @@
   }
   
   .product-image {
-    height: 100%;
-    width: 100%;
+    aspect-ratio: 4/5;
     overflow: hidden;
     margin-bottom: 16px;
     background-color: rgba(45, 45, 45, 0.05);
   }
   
   .product-image img {
+    height: 100%;
+    width: 100%;
     object-fit: cover;
     transition: transform 0.7s ease;
   }
